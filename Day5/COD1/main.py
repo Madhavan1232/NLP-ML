@@ -1,12 +1,9 @@
 import os , sys
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
-
-
 import spacy
 from collections import Counter
 
 nlp = spacy.load("en_core_web_sm")
-
 with open(os.path.join(sys.path[0] , input()) , "r") as f:
     text = f.read()
 

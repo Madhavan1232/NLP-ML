@@ -24,17 +24,11 @@ for ent in doc.ents:
     if ent.label_ in desired_labels:
         print(f"{ent.text} ({ent.label_})")
 
-person , gpe , date = 0,0,0
-for ent in doc.ents:
-    if ent.label_ == "PERSON":
-        person += 1
-    elif ent.label_ == "GPE":
-        gpe += 1
-    elif ent.label_ == "DATE":
-        date += 1
+from collections import Counter
+counter = Counter(ent.label_ for ent in doc.ents)
+person , gpe , date = counter["PERSON"], counter["GPE"], counter["DATE"]
 
 print("=== Entity Frequency ===")
 print(f"PERSON: {person}")
 print(f"GPE: {gpe}")
 print(f"DATE: {date}")
-

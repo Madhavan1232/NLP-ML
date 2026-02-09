@@ -34,7 +34,7 @@ print("=== Matched Athlete Names ===")
 athlete_matches = athlete_matcher(doc)
 if athlete_matches:
     for match_id, start, end in athlete_matches:
-        span = doc[start:end]
+        span = doc[start:end]   
         print(f"- {span.text}")
 else:
     print("No athlete names found.")

@@ -17,7 +17,7 @@ q3 = df['Consumption'].quantile(0.75)
 iqr = q3 - q1
 lower_bound = q1 - 1.5 * iqr
 upper_bound = q3 + 1.5 * iqr
-df['Consumption'] = df["Consumption"].clip(lower_bound, upper_bound) 
+df['Consumption'] = df["Consumption"].clip(lower_bound, upper_bound)    
 
 print("\nData preprocessing completed.")
 
